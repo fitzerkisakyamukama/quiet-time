@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
       this.form.dateOfBirth,
       this.form.username,
       this.form.email,
-      this.form.address,
+      this.form.residence,
       this.form.password
     );
 

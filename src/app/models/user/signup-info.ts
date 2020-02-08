@@ -5,7 +5,7 @@ export class SignUpInfo {
   dateOfBirth: Date;
   username: string;
   email: string;
-  address: string;
+  residence: string;
   roles: string[];
   password: string;
 
@@ -16,7 +16,7 @@ export class SignUpInfo {
     dateOfBirth: Date,
     username: string,
     email: string,
-    address: string,
+    residence: string,
     password: string
   )
     {
@@ -26,7 +26,7 @@ export class SignUpInfo {
       this.dateOfBirth = dateOfBirth;
       this.username = username;
       this.email = email;
-      this.address = address;
+      this.residence = residence;
       this.password = password;
       this.roles= ['user'];
 
