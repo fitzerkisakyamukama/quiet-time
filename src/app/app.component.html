@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row>
     <a mat-button routerLink="/">HOME</a>
     <span class="spacer"></span>
@@ -6,4 +6,21 @@
     <a mat-button routerLink="/login">Login</a>
   </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Quiet-time</a>
+    </div>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+      <li *ngIf="authority === 'user'" class="nav-item"><a class="nav-link" routerLink="user">User Board</a></li>
+      <li *ngIf="authority === 'manager'" class="nav-item"><a class="nav-link" routerLink="manager">Manager's Board</a></li>
+      <li *ngIf="authority === 'admin'" class="nav-item"><a class="nav-link" routerLink="admin">Admin Board</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
