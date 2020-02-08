@@ -1,47 +1,61 @@
+<div *ngIf="isSignedUp; else signupForm">
+  Your registration is successful. Please login!
+</div>
+<ng-template #signupForm>
 <mat-toolbar>
   <span>Registration</span>
 </mat-toolbar>
 <mat-card class="my-card">
   <mat-card-content>
-    <form class="registration-form">
-
+    <form class="registration-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <mat-form-field class="full-width">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First name" name="fname" required>
+        <input matInput placeholder="First name" name="firstName" [(ngModel)] ="form.firstName" required>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last name" name="lname" required>
+        <input matInput placeholder="Last name" name="lastName" [(ngModel)] ="form.lastName" required>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Address</mat-label>
-        <input matInput placeholder="Address" name="address" required>
+        <input matInput placeholder="Address" name="address" [(ngModel)] ="form.address" required>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" name="email" required>
+        <input matInput placeholder="Email" name="email"  [(ngModel)] ="form.email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" name="username" [(ngModel)] ="form.username" required>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" name="password" required>
+        <input matInput placeholder="Password" name="password" [(ngModel)] ="form.password" required>
       </mat-form-field>
       <section class="gender-selection">
         <label class="gender-margin">Gender: </label>
-        <mat-radio-group>
+        <mat-radio-group name="gender" [(ngModel)] ="form.gender">
           <mat-radio-button class="gender-margin" value="Male"> Male </mat-radio-button>
           <mat-radio-button class="gender-margin" value="Female"> Female </mat-radio-button>
         </mat-radio-group>
       </section>
       <mat-form-field>
         <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)] ="form.dateOfBirth" placeholder="Choose a date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+      </mat-form-field>       
+      <mat-card-actions>
+        <button mat-raised-button  color="primary">REGISTER</button>
+        <div *ngIf="f.submitted && isSignedUpFailed" class="alert alert-warning">
+          Signup failed! <br /> 
+          {{ errorMessage }}
+
+        </div>
+      </mat-card-actions>
     </form>
 
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
-  </mat-card-actions>
 </mat-card>
+
+</ng-template>

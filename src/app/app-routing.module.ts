@@ -11,12 +11,12 @@ import { AdminComponent } from './components/user/admin/admin.component';
 import { UserComponent } from './components/user/user/user.component';
 
 const routes: Routes = [
-  { path: 'register', component: RegistrationComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'signup', component: RegistrationComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'user', component: UserComponent },
   { path: 'manager', component: ManagerComponent },
   { path: 'admin', component: AdminComponent },
-  // { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

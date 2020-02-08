@@ -1,4 +1,4 @@
-<div *ngIf="isLoggedIn"; else loggedOut>
+<div *ngIf="isLoggedIn; else loggedOut">
    Logged in as {{roles}}.
 </div>
  <ng-template #loggedOut>
@@ -22,5 +22,9 @@
       <button mat-raised-button (click)="login()" color="primary">LOGIN</button>
     </mat-card-actions>
   </mat-card>
+  
+  <br />
+  <p>Don't have an account</p>
+  <a routerLink="/signup" class="btn btn-success">Sign up</a>
   
  </ng-template>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,12 +31,13 @@ import { UserComponent } from './components/user/user/user.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule, MatToolbarModule, MatNativeDateModule,
     MatDatepickerModule, MatIconModule, MatCheckboxModule,
     MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule,
-    MatListModule
+    MatListModule, FormsModule, ReactiveFormsModule
 
   ],
   providers: [],
