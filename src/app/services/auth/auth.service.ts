@@ -15,9 +15,10 @@ const httpOptions = {
 })
 
 export class AuthService {
-  private  host = 'http://localhost:8080/api/';
-  private loginUrl = this.host + 'auth/signin';
-  private signUpUrl = this.host + 'auth/signup';
+  // private  host = 'http://localhost:8080/api/';
+  private host = 'https://quiet-time-backend.herokuapp.com/api/auth/';
+  private loginUrl = this.host + 'signin';
+  private signUpUrl = this.host + 'signup';
 
 
   constructor(private http: HttpClient) { }
