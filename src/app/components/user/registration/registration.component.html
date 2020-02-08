@@ -47,10 +47,9 @@
       </mat-form-field>       
       <mat-card-actions>
         <button mat-raised-button  color="primary">REGISTER</button>
-        <div *ngIf="f.submitted && isSignedUpFailed" class="alert alert-warning">
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
           Signup failed! <br /> 
           {{ errorMessage }}
-
         </div>
       </mat-card-actions>
     </form>

@@ -9,7 +9,7 @@ import { TokenStorageService } from './services/auth/token-storage.service';
 export class AppComponent  implements OnInit{
   title = 'Quiet time';
   private roles: string[];
-  private authority: string;
+  public authority: string;
 
   constructor(private tokenStorage: TokenStorageService) {}
 
