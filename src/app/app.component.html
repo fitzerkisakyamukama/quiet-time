@@ -6,6 +6,9 @@
       <span *ngIf="authority === 'manager'" class="nav-item"><a mat-button routerLink="/manager">Manager's Board</a></span>
       <span *ngIf="authority === 'admin'" class="nav-item"><a mat-button routerLink="/admin">Admin Board</a></span>
       <span *ngIf="!authority" class="nav-item"><a mat-button routerLink="/login">Login</a></span>
+      
+      <button class="btn btn-secondary" ><i class="fa fa-sign-out fa-1x" (click)="logout()">Logout</i> </button>
+
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="container">
