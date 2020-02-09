@@ -7,23 +7,28 @@
   </mat-toolbar>
   <mat-card class="login-card">
     <mat-card-content>
-      <form class="login-form">
+      <form class="login-form" name="from" (ngSubmit)="f.form && onSubmit()" #f = "ngForm" novalidate>
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" name="email">
+          <input matInput placeholder="username" name="username" [(ngModel)]="form.username" required/>
         </mat-form-field>
         <mat-form-field class="full-width">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" name="password">
+          <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="form.password">
         </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button  color="primary">Login</button>
+          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger mt-4">
+            Login failed: {{ errorMessage }}
+
+          </div>
+        </mat-card-actions>
       </form>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button  color="primary">LOGIN</button>
-    </mat-card-actions>
+   
   </mat-card>
   
-  <br />
+  <hr />
   <p>Don't have an account</p>
   <a routerLink="/signup" class="btn btn-success">Sign up</a>
   

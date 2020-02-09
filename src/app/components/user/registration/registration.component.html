@@ -1,4 +1,4 @@
-<div *ngIf="isSignedUp; else signupForm">
+<div *ngIf="isSignedUp; else signupForm" class="text-success">
   Your registration is successful. Please login!
 </div>
 <ng-template #signupForm>
@@ -30,7 +30,7 @@
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" name="password" [(ngModel)] ="form.password" required>
+        <input type="password" matInput placeholder="Password" name="password" [(ngModel)] ="form.password" required>
       </mat-form-field>
       <section class="gender-selection">
         <label class="gender-margin">Gender: </label>
@@ -47,7 +47,7 @@
       </mat-form-field>       
       <mat-card-actions>
         <button mat-raised-button  color="primary">REGISTER</button>
-        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+        <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning mt-4">
           Signup failed! <br /> 
           {{ errorMessage }}
         </div>
