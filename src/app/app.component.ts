@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from './services/auth/token-storage.service';
+import { ThemeService } from './services/design/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent  implements OnInit{
   private roles: string[];
   public authority: string;
 
-  constructor(private tokenStorage: TokenStorageService) {}
+  constructor(private tokenStorage: TokenStorageService, private themeService: ThemeService) {}
 
   ngOnInit(){
     if (this.tokenStorage.getToken()) {
@@ -29,6 +30,10 @@ export class AppComponent  implements OnInit{
       })
     }
 
+  }
+
+  toggleTheme(){
+    this.themeService.toggleTheme();
   }
 
 

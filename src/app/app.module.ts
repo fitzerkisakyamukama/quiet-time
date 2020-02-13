@@ -10,8 +10,17 @@ import { MatButtonModule, MatToolbarModule, MatNativeDateModule,
           MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule,
           MatListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
-import { NbThemeModule } from '@nebular/theme';
+
+import { 
+         NbThemeModule, NbAlertModule, NbCardModule,
+         NbLayoutModule, NbThemeService, NbSidebarModule,
+          NbButtonModule, NbMenuModule, NbIconModule,
+          NbUserModule,
+          NbContextMenuModule
+
+
+        } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -20,6 +29,7 @@ import { ManagerComponent } from './components/user/manager/manager.component';
 import { AdminComponent } from './components/user/admin/admin.component';
 import { UserComponent } from './components/user/user/user.component';
 // import { httpInterceptorProviders } from './auth/auth-interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,11 +49,17 @@ import { UserComponent } from './components/user/user/user.component';
     MatDatepickerModule, MatIconModule, MatCheckboxModule,
     MatCardModule, MatFormFieldModule, MatInputModule, MatRadioModule,
     MatListModule, FormsModule, ReactiveFormsModule,
-    NbThemeModule,
-
+    NbThemeModule.forRoot({ name: 'default'}),
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbContextMenuModule,
+    NbAlertModule, NbCardModule, NbLayoutModule,
+    NbSidebarModule, NbButtonModule,NbEvaIconsModule,
+    NbEvaIconsModule, NbIconModule,
+    NbUserModule
 
   ],
-  providers: [],
+  providers: [NbThemeService, NbThemeModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
