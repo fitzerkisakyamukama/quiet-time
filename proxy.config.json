@@ -1,0 +1,7 @@
+{
+    "/api": {
+        "target": "https://quiet-time-backend.herokuapp.com/api/",
+        "secure": false
+    }
+
+}
