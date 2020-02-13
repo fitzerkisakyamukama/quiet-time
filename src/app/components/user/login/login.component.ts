@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   private loginInfo: LoginInfo;
+  loading =  false;
 
 
   constructor(
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loading =true;
     console.log(this.form);
 
     this.loginInfo = new LoginInfo(
@@ -51,6 +53,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
+        this.loading =false;
         this.roles = this.tokenStorage.getAuthorities();
         // this.roles = data.authorities
         // this.reloadPage();
@@ -61,11 +64,12 @@ export class LoginComponent implements OnInit {
         console.log(error);
         this.errorMessage = error.error.reason;
         this.isLoginFailed = true;
+        this.loading = false;
       }
     );
   };
-
-  // reloadPage() {
+   
+    // reloadPage() {
   //   window.location.reload();
   // }
   

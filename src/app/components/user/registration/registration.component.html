@@ -3,9 +3,9 @@
 </div>
 <ng-template #signupForm>
 <mat-toolbar>
-  <span>Registration</span>
+  <span>Quiet time Sign up</span>
 </mat-toolbar>
-<mat-card class="my-card">
+<mat-card class="my-card p-5">
   <mat-card-content>
     <form class="registration-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <mat-form-field class="full-width">
@@ -53,6 +53,8 @@
         </div>
       </mat-card-actions>
     </form>
+    <hr />
+    <button mat-raised-button  color="primary" routerLink="/login">ALREADY HAVE AN ACCOUNT</button>
 
   </mat-card-content>
 </mat-card>

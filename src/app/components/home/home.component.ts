@@ -3,7 +3,7 @@ import { TokenStorageService } from '../../services/auth/token-storage.service';
 import { ThemeService } from '../../services/design/theme.service';
 // import {  NbToastrService} from '@nebular/theme';
 import { NbSidebarService, NbMenuService } from '@nebular/theme';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nb-alert-outline',
@@ -102,7 +102,9 @@ export class HomeComponent implements OnInit {
     private token: TokenStorageService, 
     private themeService: ThemeService,
     private sidebarService: NbSidebarService,
-    private menuService: NbMenuService) {
+    private menuService: NbMenuService,
+    private router: Router
+    ) {
       this.menuService.onItemClick()
       .subscribe((event) => {
           this.onContextItemSelection(event.item.title);
@@ -121,7 +123,8 @@ export class HomeComponent implements OnInit {
 
   logout() {
     this.token.signout();
-    window.location.reload();
+    this.router.navigate(['/login']);
+    // window.location.reload();
   }
 
   // showToast(position, status) {

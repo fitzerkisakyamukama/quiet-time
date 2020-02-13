@@ -16,7 +16,7 @@ import {
          NbLayoutModule, NbThemeService, NbSidebarModule,
           NbButtonModule, NbMenuModule, NbIconModule,
           NbUserModule,
-          NbContextMenuModule
+          NbContextMenuModule, NbSpinnerModule
 
 
         } from '@nebular/theme';
@@ -56,7 +56,7 @@ import { UserComponent } from './components/user/user/user.component';
     NbAlertModule, NbCardModule, NbLayoutModule,
     NbSidebarModule, NbButtonModule,NbEvaIconsModule,
     NbEvaIconsModule, NbIconModule,
-    NbUserModule
+    NbUserModule, NbSpinnerModule
 
   ],
   providers: [NbThemeService, NbThemeModule],
