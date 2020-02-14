@@ -11,7 +11,7 @@ import { MatButtonModule, MatToolbarModule, MatNativeDateModule,
           MatListModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { 
+import {
          NbThemeModule, NbAlertModule, NbCardModule,
          NbLayoutModule, NbThemeService, NbSidebarModule,
           NbButtonModule, NbMenuModule, NbIconModule,
@@ -28,6 +28,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ManagerComponent } from './components/user/manager/manager.component';
 import { AdminComponent } from './components/user/admin/admin.component';
 import { UserComponent } from './components/user/user/user.component';
+import { DailyVerseComponent } from './components/devotion/daily-verse/daily-verse.component';
 // import { httpInterceptorProviders } from './auth/auth-interceptor';
 
 @NgModule({
@@ -38,7 +39,8 @@ import { UserComponent } from './components/user/user/user.component';
     HomeComponent,
     ManagerComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    DailyVerseComponent
   ],
   imports: [
     BrowserModule,

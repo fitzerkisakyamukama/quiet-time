@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
          {
            title: 'Daily devotion',
            icon: 'sun-outline',
-           link: [],
+           link: "/dailyVerse",
          },
          {
            title: 'Your devotions',
@@ -89,17 +89,17 @@ export class HomeComponent implements OnInit {
 
       ]
     },
-    { 
+    {
       title: 'Help',
       icon: 'question-mark-outline',
       link: []
 
     }
-    
+
   ]
 
   constructor(
-    private token: TokenStorageService, 
+    private token: TokenStorageService,
     private themeService: ThemeService,
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
@@ -142,10 +142,10 @@ export class HomeComponent implements OnInit {
 
   toggle() {
     this.sidebarService.toggle(true);
-    return false; 
+    return false;
   }
 
-  
+
 
   onContextItemSelection(title) {
     if(title ==='Logout')

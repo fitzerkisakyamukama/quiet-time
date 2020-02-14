@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ManagerComponent } from './components/user/manager/manager.component';
 import { AdminComponent } from './components/user/admin/admin.component';
 import { UserComponent } from './components/user/user/user.component';
+import { DailyVerseComponent } from './components/devotion/daily-verse/daily-verse.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'manager', component: ManagerComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'dailyVerse', component: DailyVerseComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
