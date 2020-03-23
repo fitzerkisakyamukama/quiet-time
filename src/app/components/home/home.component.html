@@ -1,20 +1,28 @@
 <div *ngIf="info.token; else loggedOut">
-    
-        <div class="example-last-child-no-b-margin">
-          <p status="success" outline="primary" closable>You have been successfully authenticated!</p>
-        </div>
-      <h5 class="text-primary">Your Information</h5>
+  <nav class="navbar nav-bar-dark bg-dark">
+      <a href="#" class="nav-bar-brand"> Quiet time</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-targret="navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  </nav>  
+  <div class="container">   
+
+
+
+    <h5 class="text-primary">Your Information</h5>
     <p>
         <strong>Username: </strong> {{ info.username }} <br />
         <strong>Roles: </strong> {{ info.authorities }}<br />
-        <strong>Token: </strong> {{ info.token }}
-
+       
     </p>
+
     <button class="btn btn-secondary" (click)="logout()"> Logout </button>
   
+
+ </div>
 </div>
 
 
 <ng-template #loggedOut>
-    <a routerLink="/login">Please login</a>
+  <a routerLink="/login">Please login</a>
 </ng-template>
