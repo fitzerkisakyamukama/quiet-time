@@ -1,47 +1,9 @@
-<nb-layout *ngIf="info.token; else loggedOut">
-    <nb-layout-header>
-        <!-- <button nbButton (click)="toggleTheme()" status="primary">Change theme</button> -->
-        <a href="#" (click)="toggle()"><i class="nb-menu"><nb-icon icon="menu-outline"></nb-icon></i></a>
-
-       <h5 class="m-5"> Quiet time</h5>
-              <div class="col-lg-4"></div>
-              <div class="col-lg-3"></div>
-              <div class="col-lg-2"></div>
-              <button nbButton status="basic" class="p-2 mr-2">
-                    <nb-icon icon="email-outline"></nb-icon>
-              </button>
-              <button nbButton class="p-2" status="basic">
-                  <nb-icon icon="bell-outline"></nb-icon>
-              </button>
-               <nb-user  outline class="ml-4"
-               size="large"
-               name="Michael KK"
-               badgePosition="bottom right"
-               [nbContextMenu]="user"
-               nbContextMenuTrigger="hover"
-               >
-               </nb-user>
-    </nb-layout-header>
-    <nb-sidebar>
-            <nb-menu [items]='items'></nb-menu>
-    </nb-sidebar>
-    <nb-layout-column class="colored-column-basic">
-        <router-outlet></router-outlet>
-
-    </nb-layout-column>
-    <nb-layout-footer> Quiet time v0.0.1 &copy;2020 </nb-layout-footer>
-</nb-layout>
-
-
-<!-- <div *ngIf="info.token; else loggedOut"> -->
+<div *ngIf="info.token; else loggedOut">
     
-    <!-- <nb-card>
-        <nb-card-body class="example-last-child-no-b-margin">
-          <nb-alert status="success" outline="primary" closable>You have been successfully authenticated!</nb-alert>
-        </nb-card-body>
-      </nb-card>
-      <button nbButton (click)="showToast('top-right', 'success')">Top rigght</button> -->
-    <!-- <h5 class="text-primary">Your Information</h5>
+        <div class="example-last-child-no-b-margin">
+          <p status="success" outline="primary" closable>You have been successfully authenticated!</p>
+        </div>
+      <h5 class="text-primary">Your Information</h5>
     <p>
         <strong>Username: </strong> {{ info.username }} <br />
         <strong>Roles: </strong> {{ info.authorities }}<br />
@@ -50,7 +12,7 @@
     </p>
     <button class="btn btn-secondary" (click)="logout()"> Logout </button>
   
-</div> -->
+</div>
 
 
 <ng-template #loggedOut>

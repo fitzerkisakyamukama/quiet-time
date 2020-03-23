@@ -16,11 +16,7 @@
           <mat-label>Password</mat-label>
           <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="form.password">
         </mat-form-field>
-        <mat-card-actions
-          [nbSpinner]="loading" 
-          nbSpinnerStatus="info"
-          nbSpinnerSize ="large"
-          nbSpinnerMessage="Signing in"        
+        <mat-card-actions     
         >
           <button 
              mat-raised-button  color="primary"
